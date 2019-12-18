@@ -13,19 +13,46 @@
         function computerPlay() {
             let options = ["Rock", "Paper", "Scissors"];
             let randomOption = options[Math.floor(Math.random()*options.length)];
-            console.log(randomOption);
-        }
+            return randomOption;
+        }        
+
         function playerPlay() {
             let playerChoice = prompt("What do you pick?");
                 playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
+                console.log(playerChoice);
+                return playerChoice;
         }
-                switch (playerPlay()) {
-                    case "Rock":
-                        player
 
-            }    
-            console.log(playerChoice);        
-        computerPlay();
+
+
+
+        function playRound() {
+            let playerRPS = playerPlay();
+            let computerRPS = computerPlay();
+            if (playerRPS == computerRPS) {
+                alert("Same");
+            }
+            else if (playerRPS == "Rock" && computerRPS == "Paper") {
+                alert("You lose, Paper beats Rock");
+            }
+            else {
+                alert("You win, Rock beats Scissors");
+            }
+
+        }
+        playRound();
+
+
+
+
+        
+        
+        
+
+
+                
+                
+                
     </script>
 
 </body>
