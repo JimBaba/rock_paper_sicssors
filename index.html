@@ -13,6 +13,7 @@
         function computerPlay() {
             let options = ["Rock", "Paper", "Scissors"];
             let randomOption = options[Math.floor(Math.random()*options.length)];
+            console.log(randomOption);
             return randomOption;
         }        
 
@@ -23,24 +24,57 @@
                 return playerChoice;
         }
 
-
-
-
-        function playRound() {
-            let playerRPS = playerPlay();
-            let computerRPS = computerPlay();
+        function playRound(playerRPS, computerRPS) {
             if (playerRPS == computerRPS) {
-                alert("Same");
+                let draw = "Draw";
+                return(draw);
             }
             else if (playerRPS == "Rock" && computerRPS == "Paper") {
-                alert("You lose, Paper beats Rock");
+                let lose = "You lose, Paper beats Rock";
+                return(lose);
+            }
+            else if (playerRPS == "Rock" && computerRPS == "Scissors") {
+                let win = "You win, Rock beats Scissors";
+                return(win);
+            }
+            else if (playerRPS == "Paper" && computerRPS == "Scissors") {
+                let lose = "You lose, Scissors beats Paper";
+                return(lose);
+            }
+            else if (playerRPS == "Paper" && computerRPS == "Rock") {
+                let win = "You win, Paper beats Rock";
+                return(win);
+            }
+            else if (playerRPS == "Scissors" && computerRPS == "Rock") {
+                let lose = "You lose, Rock beats Scissors";
+                return(lose);
+            }
+            else if (playerRPS == "Scissors" && computerRPS == "Paper") {
+                let win = "You win, Scissors beats Paper";
+                return(win);
             }
             else {
-                alert("You win, Rock beats Scissors");
+                let idiot = "You don't know how RPS works?"
+                return(idiot);
             }
 
         }
-        playRound();
+
+        function game() {
+            
+            let score = 0;
+            let roundCounter = 0;
+            let playerRPS = playerPlay();
+            let computerRPS = computerPlay();
+            playRound();
+            playRound();
+            playRound();
+            playRound();
+            playRound();
+        }
+
+        game();
+        
 
 
 
